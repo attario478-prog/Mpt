@@ -1,1 +1,11 @@
-{"customizations": {"vscode": {"extensions": []}}, "forwardPorts": [8501, 8080], "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye", "name": "Mpt", "portsAttributes": {"8080": {"label": "API", "onAutoForward": "silent"}, "8501": {"label": "WebUI", "onAutoForward": "notify"}}, "postCreateCommand": "bash setup-codespace.sh"}
+{
+  "name": "Mpt",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  "forwardPorts": [8501, 8080],
+  "portsAttributes": {
+    "8501": { "label": "WebUI", "onAutoForward": "notify" },
+    "8080": { "label": "API", "onAutoForward": "silent" }
+  },
+  "postCreateCommand": "bash setup-codespace.sh",
+  "postStartCommand": "bash start-webui.sh"
+}

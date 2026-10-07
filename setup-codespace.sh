@@ -23,7 +23,4 @@ uv sync --frozen
 [ -f config.toml ] || cp config.example.toml config.toml
 
 echo '===== SELESAI ====='
-echo 'Jalankan WebUI:'
-echo '  cd ~/workspaces/Mpt 2>/dev/null || cd /workspaces/Mpt; cd MoneyPrinterTurbo && MPT_WEBUI_HOST=0.0.0.0 MPT_WEBUI_PORT=8501 sh webui.sh'
-echo 'Lalu buka tab PORTS -> 8501 -> Open in Browser.'
-echo 'Isi Settings: llm_provider=openrouter + key, model minimax/minimax-m3:free, pexels key, subtitle=edge.'
+echo 'Isi Settings WebUI: llm_provider=openrouter + key, model minimax/minimax-m3:free, pexels key, subtitle=edge.'
