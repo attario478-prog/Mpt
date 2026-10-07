@@ -36,3 +36,6 @@ run uv sync --frozen
 
 echo "=== setup selesai $(date -u) ==="
 echo "Isi Settings WebUI: llm_provider=openrouter, model minimax/minimax-m3:free, Pexels key, subtitle=edge."
+
+# Nyalakan WebUI langsung setelah setup (idempotent).
+bash "$ROOT/start-webui.sh"
