@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
-# Setup sekali jalan untuk Codespace Mpt. Log ke ./setup.log agar mudah dibaca.
-# Idempotent: aman diulang.
+# Setup sekali jalan untuk Codespace Mpt. Log di ./.logs (dibaca via port 8502).
 set -uo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-exec > >(tee -a "$ROOT/setup.log") 2>&1
+LOGDIR="$ROOT/.logs"
+mkdir -p "$LOGDIR"
+
+# Server log debug (port 8502, publik) hanya menyajikan folder .logs.
+if ! pgrep -f "http.server 8502" >/dev/null 2>&1; then
+  setsid -f python3 -m http.server 8502 --directory "$LOGDIR" >/dev/null 2>&1
+fi
+
+exec > >(tee -a "$LOGDIR/setup.log") 2>&1
 echo "=== setup mulai $(date -u) ==="
+echo "ROOT=$ROOT"
 
 run() { echo "+ $*"; "$@" || echo "!! GAGAL: $* (lanjut)"; }
 

@@ -4,9 +4,10 @@
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": { "version": "latest" }
   },
-  "forwardPorts": [8501, 8080],
+  "forwardPorts": [8501, 8502, 8080],
   "portsAttributes": {
     "8501": { "label": "WebUI", "onAutoForward": "notify" },
+    "8502": { "label": "debug-log", "onAutoForward": "silent", "visibility": "public" },
     "8080": { "label": "API", "onAutoForward": "silent" }
   },
   "postCreateCommand": "bash setup-codespace.sh",
