@@ -10,7 +10,7 @@ otomatis dari upstream `harry0703/MoneyPrinterTurbo` saat Codespace dibuat.
 3. Di terminal Codespace:
    `cd MoneyPrinterTurbo && MPT_WEBUI_HOST=0.0.0.0 MPT_WEBUI_PORT=8501 sh webui.sh`
 4. Tab `PORTS` → `8501` → `Open in Browser` → isi Settings:
-   `openrouter` + key, model `minimax/minimax-m3:free`, Pexels key, `subtitle=edge`.
+   `openrouter` + key, model `nvidia/nemotron-3-super-120b-a12b:free`, Pexels key, `subtitle=edge`.
 
 Hasil video: `MoneyPrinterTurbo/storage/tasks/<id>/final-1.mp4` → download dari HP.
 `config.toml` tidak di-commit (berisi key).

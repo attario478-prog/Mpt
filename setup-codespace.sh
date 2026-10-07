@@ -35,7 +35,7 @@ run uv sync --frozen
 [ -f config.toml ] || cp config.example.toml config.toml
 
 echo "=== setup selesai $(date -u) ==="
-echo "Isi Settings WebUI: llm_provider=openrouter, model minimax/minimax-m3:free, Pexels key, subtitle=edge."
+echo "Isi Settings WebUI: llm_provider=openrouter, model nvidia/nemotron-3-super-120b-a12b:free, Pexels key, subtitle=edge."
 
 # Nyalakan WebUI langsung setelah setup (idempotent).
 bash "$ROOT/start-webui.sh"
